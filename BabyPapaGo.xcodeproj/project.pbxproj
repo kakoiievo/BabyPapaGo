@@ -1,0 +1,470 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		43C4F866176107986C76ED30 /* Pods_BabyPapaGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCCE2A92AE363C590A160603 /* Pods_BabyPapaGo.framework */; };
+		AD60B41F21C088FF00B69903 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60B41E21C088FF00B69903 /* AppDelegate.swift */; };
+		AD60B42421C088FF00B69903 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD60B42221C088FF00B69903 /* Main.storyboard */; };
+		AD60B42621C0890200B69903 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD60B42521C0890200B69903 /* Assets.xcassets */; };
+		AD60B42921C0890200B69903 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD60B42721C0890200B69903 /* LaunchScreen.storyboard */; };
+		AD60B43721C0A9E000B69903 /* BabyPapaGo.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = AD60B43621C0A9E000B69903 /* BabyPapaGo.sqlite3 */; };
+		AD60B43921C0AC2D00B69903 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60B43821C0AC2D00B69903 /* ViewController.swift */; };
+		AD60B43C21C0AC5500B69903 /* MamaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60B43A21C0AC5500B69903 /* MamaTableViewController.swift */; };
+		AD60B43D21C0AC5500B69903 /* ListTBCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60B43B21C0AC5500B69903 /* ListTBCell.swift */; };
+		AD60B44221C0ACB100B69903 /*  Starrysky1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AD60B43F21C0ACB100B69903 /*  Starrysky1.jpeg */; };
+		AD60B44321C0ACB100B69903 /* AppIcon32.png in Resources */ = {isa = PBXBuildFile; fileRef = AD60B44021C0ACB100B69903 /* AppIcon32.png */; };
+		AD60B44621C0AE2B00B69903 /* foest.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AD60B44521C0AE2B00B69903 /* foest.jpeg */; };
+		AD60B44821C0AFF800B69903 /* fortes1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD60B44721C0AFF800B69903 /* fortes1.jpg */; };
+		AD60B44A21C0B0B500B69903 /* bluesky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD60B44921C0B0B500B69903 /* bluesky.jpg */; };
+		AD60B44C21C0B29D00B69903 /* WeatherDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60B44B21C0B29D00B69903 /* WeatherDataModel.swift */; };
+		AD60B45021C0DC7D00B69903 /* test.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AD60B44F21C0DC7D00B69903 /* test.jpeg */; };
+		AD60B45221C0F78100B69903 /* titleImage.png in Resources */ = {isa = PBXBuildFile; fileRef = AD60B45121C0F78100B69903 /* titleImage.png */; };
+		AD60B45421C1670700B69903 /* 天氣.png in Resources */ = {isa = PBXBuildFile; fileRef = AD60B45321C1670700B69903 /* 天氣.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		35C3D6B0E68DFB07F5EDD3C7 /* Pods-BabyPapaGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabyPapaGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-BabyPapaGo/Pods-BabyPapaGo.release.xcconfig"; sourceTree = "<group>"; };
+		3E451FE2176A8DC8FE86DCFA /* Pods-BabyPapaGo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabyPapaGo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BabyPapaGo/Pods-BabyPapaGo.debug.xcconfig"; sourceTree = "<group>"; };
+		AD60B41B21C088FF00B69903 /* BabyPapaGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabyPapaGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD60B41E21C088FF00B69903 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AD60B42321C088FF00B69903 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AD60B42521C0890200B69903 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AD60B42821C0890200B69903 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AD60B42A21C0890200B69903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD60B43221C09B9200B69903 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		AD60B43621C0A9E000B69903 /* BabyPapaGo.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = BabyPapaGo.sqlite3; sourceTree = "<group>"; };
+		AD60B43821C0AC2D00B69903 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AD60B43A21C0AC5500B69903 /* MamaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MamaTableViewController.swift; sourceTree = "<group>"; };
+		AD60B43B21C0AC5500B69903 /* ListTBCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTBCell.swift; sourceTree = "<group>"; };
+		AD60B43F21C0ACB100B69903 /*  Starrysky1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = " Starrysky1.jpeg"; sourceTree = "<group>"; };
+		AD60B44021C0ACB100B69903 /* AppIcon32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon32.png; sourceTree = "<group>"; };
+		AD60B44521C0AE2B00B69903 /* foest.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = foest.jpeg; sourceTree = "<group>"; };
+		AD60B44721C0AFF800B69903 /* fortes1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fortes1.jpg; sourceTree = "<group>"; };
+		AD60B44921C0B0B500B69903 /* bluesky.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bluesky.jpg; sourceTree = "<group>"; };
+		AD60B44B21C0B29D00B69903 /* WeatherDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDataModel.swift; sourceTree = "<group>"; };
+		AD60B44F21C0DC7D00B69903 /* test.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpeg; sourceTree = "<group>"; };
+		AD60B45121C0F78100B69903 /* titleImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = titleImage.png; sourceTree = "<group>"; };
+		AD60B45321C1670700B69903 /* 天氣.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "天氣.png"; sourceTree = "<group>"; };
+		FCCE2A92AE363C590A160603 /* Pods_BabyPapaGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BabyPapaGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AD60B41821C088FF00B69903 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43C4F866176107986C76ED30 /* Pods_BabyPapaGo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		008194DA0DB3B5B0A04CEE91 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3E451FE2176A8DC8FE86DCFA /* Pods-BabyPapaGo.debug.xcconfig */,
+				35C3D6B0E68DFB07F5EDD3C7 /* Pods-BabyPapaGo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AD60B41221C088FF00B69903 = {
+			isa = PBXGroup;
+			children = (
+				AD60B41D21C088FF00B69903 /* BabyPapaGo */,
+				AD60B41C21C088FF00B69903 /* Products */,
+				AD60B43121C09B9100B69903 /* Frameworks */,
+				008194DA0DB3B5B0A04CEE91 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		AD60B41C21C088FF00B69903 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AD60B41B21C088FF00B69903 /* BabyPapaGo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AD60B41D21C088FF00B69903 /* BabyPapaGo */ = {
+			isa = PBXGroup;
+			children = (
+				AD60B41E21C088FF00B69903 /* AppDelegate.swift */,
+				AD60B43821C0AC2D00B69903 /* ViewController.swift */,
+				AD60B44B21C0B29D00B69903 /* WeatherDataModel.swift */,
+				AD60B43A21C0AC5500B69903 /* MamaTableViewController.swift */,
+				AD60B43B21C0AC5500B69903 /* ListTBCell.swift */,
+				AD60B42221C088FF00B69903 /* Main.storyboard */,
+				AD60B42521C0890200B69903 /* Assets.xcassets */,
+				AD60B42721C0890200B69903 /* LaunchScreen.storyboard */,
+				AD60B42A21C0890200B69903 /* Info.plist */,
+				AD60B43621C0A9E000B69903 /* BabyPapaGo.sqlite3 */,
+				AD60B44421C0ACB600B69903 /* Image */,
+			);
+			path = BabyPapaGo;
+			sourceTree = "<group>";
+		};
+		AD60B43121C09B9100B69903 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AD60B43221C09B9200B69903 /* libsqlite3.tbd */,
+				FCCE2A92AE363C590A160603 /* Pods_BabyPapaGo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AD60B44421C0ACB600B69903 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				AD60B44F21C0DC7D00B69903 /* test.jpeg */,
+				AD60B44721C0AFF800B69903 /* fortes1.jpg */,
+				AD60B44521C0AE2B00B69903 /* foest.jpeg */,
+				AD60B44921C0B0B500B69903 /* bluesky.jpg */,
+				AD60B44021C0ACB100B69903 /* AppIcon32.png */,
+				AD60B43F21C0ACB100B69903 /*  Starrysky1.jpeg */,
+				AD60B45321C1670700B69903 /* 天氣.png */,
+				AD60B45121C0F78100B69903 /* titleImage.png */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AD60B41A21C088FF00B69903 /* BabyPapaGo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD60B42D21C0890200B69903 /* Build configuration list for PBXNativeTarget "BabyPapaGo" */;
+			buildPhases = (
+				41B72593669C21281165C1F3 /* [CP] Check Pods Manifest.lock */,
+				AD60B41721C088FF00B69903 /* Sources */,
+				AD60B41821C088FF00B69903 /* Frameworks */,
+				AD60B41921C088FF00B69903 /* Resources */,
+				6C42094D9E0F26A530F389FE /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BabyPapaGo;
+			productName = BabyPapaGo;
+			productReference = AD60B41B21C088FF00B69903 /* BabyPapaGo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AD60B41321C088FF00B69903 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Yung;
+				TargetAttributes = {
+					AD60B41A21C088FF00B69903 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = AD60B41621C088FF00B69903 /* Build configuration list for PBXProject "BabyPapaGo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AD60B41221C088FF00B69903;
+			productRefGroup = AD60B41C21C088FF00B69903 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AD60B41A21C088FF00B69903 /* BabyPapaGo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AD60B41921C088FF00B69903 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD60B45421C1670700B69903 /* 天氣.png in Resources */,
+				AD60B42921C0890200B69903 /* LaunchScreen.storyboard in Resources */,
+				AD60B42621C0890200B69903 /* Assets.xcassets in Resources */,
+				AD60B45221C0F78100B69903 /* titleImage.png in Resources */,
+				AD60B44321C0ACB100B69903 /* AppIcon32.png in Resources */,
+				AD60B44A21C0B0B500B69903 /* bluesky.jpg in Resources */,
+				AD60B44821C0AFF800B69903 /* fortes1.jpg in Resources */,
+				AD60B42421C088FF00B69903 /* Main.storyboard in Resources */,
+				AD60B44221C0ACB100B69903 /*  Starrysky1.jpeg in Resources */,
+				AD60B43721C0A9E000B69903 /* BabyPapaGo.sqlite3 in Resources */,
+				AD60B44621C0AE2B00B69903 /* foest.jpeg in Resources */,
+				AD60B45021C0DC7D00B69903 /* test.jpeg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		41B72593669C21281165C1F3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BabyPapaGo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C42094D9E0F26A530F389FE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BabyPapaGo/Pods-BabyPapaGo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BabyPapaGo/Pods-BabyPapaGo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AD60B41721C088FF00B69903 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD60B43921C0AC2D00B69903 /* ViewController.swift in Sources */,
+				AD60B44C21C0B29D00B69903 /* WeatherDataModel.swift in Sources */,
+				AD60B43D21C0AC5500B69903 /* ListTBCell.swift in Sources */,
+				AD60B41F21C088FF00B69903 /* AppDelegate.swift in Sources */,
+				AD60B43C21C0AC5500B69903 /* MamaTableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AD60B42221C088FF00B69903 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD60B42321C088FF00B69903 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AD60B42721C0890200B69903 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD60B42821C0890200B69903 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AD60B42B21C0890200B69903 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AD60B42C21C0890200B69903 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AD60B42E21C0890200B69903 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E451FE2176A8DC8FE86DCFA /* Pods-BabyPapaGo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 75U3DP2A2N;
+				INFOPLIST_FILE = BabyPapaGo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kakoiievo.BabyPapaGo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AD60B42F21C0890200B69903 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35C3D6B0E68DFB07F5EDD3C7 /* Pods-BabyPapaGo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 75U3DP2A2N;
+				INFOPLIST_FILE = BabyPapaGo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kakoiievo.BabyPapaGo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AD60B41621C088FF00B69903 /* Build configuration list for PBXProject "BabyPapaGo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD60B42B21C0890200B69903 /* Debug */,
+				AD60B42C21C0890200B69903 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD60B42D21C0890200B69903 /* Build configuration list for PBXNativeTarget "BabyPapaGo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD60B42E21C0890200B69903 /* Debug */,
+				AD60B42F21C0890200B69903 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AD60B41321C088FF00B69903 /* Project object */;
+}
