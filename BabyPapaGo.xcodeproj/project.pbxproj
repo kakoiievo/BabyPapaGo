@@ -25,6 +25,7 @@
 		AD60B45021C0DC7D00B69903 /* test.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AD60B44F21C0DC7D00B69903 /* test.jpeg */; };
 		AD60B45221C0F78100B69903 /* titleImage.png in Resources */ = {isa = PBXBuildFile; fileRef = AD60B45121C0F78100B69903 /* titleImage.png */; };
 		AD60B45421C1670700B69903 /* 天氣.png in Resources */ = {isa = PBXBuildFile; fileRef = AD60B45321C1670700B69903 /* 天氣.png */; };
+		AD60B45621C1F56B00B69903 /* NewAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60B45521C1F56A00B69903 /* NewAddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		AD60B44F21C0DC7D00B69903 /* test.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpeg; sourceTree = "<group>"; };
 		AD60B45121C0F78100B69903 /* titleImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = titleImage.png; sourceTree = "<group>"; };
 		AD60B45321C1670700B69903 /* 天氣.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "天氣.png"; sourceTree = "<group>"; };
+		AD60B45521C1F56A00B69903 /* NewAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAddViewController.swift; sourceTree = "<group>"; };
 		FCCE2A92AE363C590A160603 /* Pods_BabyPapaGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BabyPapaGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -99,6 +101,7 @@
 				AD60B43821C0AC2D00B69903 /* ViewController.swift */,
 				AD60B44B21C0B29D00B69903 /* WeatherDataModel.swift */,
 				AD60B43A21C0AC5500B69903 /* MamaTableViewController.swift */,
+				AD60B45521C1F56A00B69903 /* NewAddViewController.swift */,
 				AD60B43B21C0AC5500B69903 /* ListTBCell.swift */,
 				AD60B42221C088FF00B69903 /* Main.storyboard */,
 				AD60B42521C0890200B69903 /* Assets.xcassets */,
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD60B43921C0AC2D00B69903 /* ViewController.swift in Sources */,
+				AD60B45621C1F56B00B69903 /* NewAddViewController.swift in Sources */,
 				AD60B44C21C0B29D00B69903 /* WeatherDataModel.swift in Sources */,
 				AD60B43D21C0AC5500B69903 /* ListTBCell.swift in Sources */,
 				AD60B41F21C088FF00B69903 /* AppDelegate.swift in Sources */,

@@ -16,8 +16,11 @@ import SQLite3
 
 class MamaTableViewController: UITableViewController
 {
+    
+    
     var db:OpaquePointer?
-
+    
+    
     var dicRow = [String:Any?]()
 
     var arrTable = [[String:Any?]]()
@@ -45,7 +48,7 @@ class MamaTableViewController: UITableViewController
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "編輯", style: .plain, target: self, action: #selector(btnEdintAction))
         
         //在導覽列又右側增新增按鈕
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新增", style: .plain, target: self, action: #selector(btnEdintAction))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新增", style: .plain, target: self, action: #selector(btnAddAction))
         
         //設定導覽列的標題
         self.navigationItem.title = "BabyLetsGO"
@@ -82,7 +85,7 @@ class MamaTableViewController: UITableViewController
         if db != nil
         {
             
-            let sql = "select name,listname,address,phone from BabypapaList"
+            let sql = "select name,listname,address,phone,picture from BabypapaList"
            
             
             //將sql指令 由swift語言字串 轉換為 Ｃ語言字串(即是字元陣列)
@@ -119,13 +122,11 @@ class MamaTableViewController: UITableViewController
                 var imageData:Data!
                 
                 //讀取檔案的位元資料(用於照片或是其他檔案)
-                if let totalBytes = sqlite3_column_blob(statement, 4)
+                if let totalBytes = sqlite3_column_blob(statement, 5)
                 {
                     
-                    //=====to=========do============
-                    
                     //讀取檔案長度
-                    let fileLength = sqlite3_column_bytes(statement, 4)
+                    let fileLength = sqlite3_column_bytes(statement, 5)
                     
                     //將檔案資訊還原成Data
                     imageData = Data(bytes: totalBytes, count: Int(fileLength))
@@ -134,7 +135,7 @@ class MamaTableViewController: UITableViewController
                 else
                 {
                     let aImage = UIImage(named: "test.jpeg")
-                    imageData = aImage?.jpegData(compressionQuality: 0.1)
+                    imageData = aImage?.jpegData(compressionQuality: 0.8)
                 }
                 dicRow["picture"] = imageData
                 
@@ -180,6 +181,20 @@ class MamaTableViewController: UITableViewController
         }
     }
     
+
+    
+    @objc func btnAddAction()
+    {
+        //MARK: - Get NewAddViewController
+        let addVC = self.storyboard!.instantiateViewController(withIdentifier: "NewAddViewController") as! NewAddViewController
+        
+        //傳遞資訊
+        addVC.NewMaTableViewController = self
+        
+        //顯示新增畫面
+        self.show(addVC, sender: nil)
+    }
+    
     @objc func handleRefresh()
     {
         
@@ -188,13 +203,12 @@ class MamaTableViewController: UITableViewController
         //從updateSearchResults 移到這邊
         isSearch = false
         
-        //srep1 重新讀取來源資料庫到離線資料集(arrTable)
+      
         getDataFromTable()
         
-        //step2 更新表格資料
+      
         self.tableView.reloadData()
-        
-        //step3 停止下拉更新元件的更新狀態
+  
         self.tableView.refreshControl?.endRefreshing()
         
         
@@ -251,15 +265,10 @@ class MamaTableViewController: UITableViewController
         let deleteAction = UITableViewRowAction(style: .destructive, title: "確定Byby") { (rowAction, IndexPath) in
             
             print("刪除按鈕被按下去了 淦")
-            
-            //step1. 實際刪除資料庫當筆資料
-            //<<<<<<to  do >>>>>>>>>
-            
-            //step2. 刪除陣列(當筆資料集)
-            //刪除陣列當筆資料
+        
             self.arrTable.remove(at: indexPath.row)
             
-            //刪除表格上面的儲存格
+            
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
         
@@ -289,7 +298,8 @@ class MamaTableViewController: UITableViewController
         }    
     }
     */
-
+    
+    
     
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
@@ -322,6 +332,7 @@ class MamaTableViewController: UITableViewController
         // Pass the selected object to the new view controller.
     }
     */
+    
     
     
 

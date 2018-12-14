@@ -38,7 +38,8 @@ UIPickerViewDelegate{
     
     var cityPickView: UIPickerView!
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         //24.688176, 120.900805
         
