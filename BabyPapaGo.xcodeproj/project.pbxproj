@@ -20,7 +20,6 @@
 		AD60B44321C0ACB100B69903 /* AppIcon32.png in Resources */ = {isa = PBXBuildFile; fileRef = AD60B44021C0ACB100B69903 /* AppIcon32.png */; };
 		AD60B44621C0AE2B00B69903 /* foest.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AD60B44521C0AE2B00B69903 /* foest.jpeg */; };
 		AD60B44821C0AFF800B69903 /* fortes1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD60B44721C0AFF800B69903 /* fortes1.jpg */; };
-		AD60B44A21C0B0B500B69903 /* bluesky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD60B44921C0B0B500B69903 /* bluesky.jpg */; };
 		AD60B44C21C0B29D00B69903 /* WeatherDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60B44B21C0B29D00B69903 /* WeatherDataModel.swift */; };
 		AD60B45021C0DC7D00B69903 /* test.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AD60B44F21C0DC7D00B69903 /* test.jpeg */; };
 		AD60B45221C0F78100B69903 /* titleImage.png in Resources */ = {isa = PBXBuildFile; fileRef = AD60B45121C0F78100B69903 /* titleImage.png */; };
@@ -46,7 +45,6 @@
 		AD60B44021C0ACB100B69903 /* AppIcon32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon32.png; sourceTree = "<group>"; };
 		AD60B44521C0AE2B00B69903 /* foest.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = foest.jpeg; sourceTree = "<group>"; };
 		AD60B44721C0AFF800B69903 /* fortes1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fortes1.jpg; sourceTree = "<group>"; };
-		AD60B44921C0B0B500B69903 /* bluesky.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bluesky.jpg; sourceTree = "<group>"; };
 		AD60B44B21C0B29D00B69903 /* WeatherDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDataModel.swift; sourceTree = "<group>"; };
 		AD60B44F21C0DC7D00B69903 /* test.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpeg; sourceTree = "<group>"; };
 		AD60B45121C0F78100B69903 /* titleImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = titleImage.png; sourceTree = "<group>"; };
@@ -128,7 +126,6 @@
 				AD60B44F21C0DC7D00B69903 /* test.jpeg */,
 				AD60B44721C0AFF800B69903 /* fortes1.jpg */,
 				AD60B44521C0AE2B00B69903 /* foest.jpeg */,
-				AD60B44921C0B0B500B69903 /* bluesky.jpg */,
 				AD60B44021C0ACB100B69903 /* AppIcon32.png */,
 				AD60B43F21C0ACB100B69903 /*  Starrysky1.jpeg */,
 				AD60B45321C1670700B69903 /* 天氣.png */,
@@ -202,7 +199,6 @@
 				AD60B42621C0890200B69903 /* Assets.xcassets in Resources */,
 				AD60B45221C0F78100B69903 /* titleImage.png in Resources */,
 				AD60B44321C0ACB100B69903 /* AppIcon32.png in Resources */,
-				AD60B44A21C0B0B500B69903 /* bluesky.jpg in Resources */,
 				AD60B44821C0AFF800B69903 /* fortes1.jpg in Resources */,
 				AD60B42421C088FF00B69903 /* Main.storyboard in Resources */,
 				AD60B44221C0ACB100B69903 /*  Starrysky1.jpeg in Resources */,
