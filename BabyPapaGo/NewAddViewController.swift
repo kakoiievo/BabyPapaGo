@@ -14,6 +14,9 @@ class NewAddViewController: UIViewController,UINavigationControllerDelegate,UIIm
     @IBOutlet weak var newPhone: UITextField!
     @IBOutlet weak var newAddress: UITextField!
     @IBOutlet weak var newImage: UIImageView!
+    @IBOutlet weak var newListName: UITextField!
+    
+    
     
     var db:OpaquePointer?
     
@@ -41,7 +44,7 @@ class NewAddViewController: UIViewController,UINavigationControllerDelegate,UIIm
     
     @objc func keyBoardShow(_ sender:Notification)
     {
-        print("w2l42i3\(sender.userInfo!)")
+        
         
         
         if let keyBoardHeight = (sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey]as? NSValue)?.cgRectValue.size.height
@@ -57,13 +60,31 @@ class NewAddViewController: UIViewController,UINavigationControllerDelegate,UIIm
             if  currentObjectBottomYposion > visiableHeight
             {
                 //移動『Y軸底緣位置』與『可視高度』之間的差值
-                self.view.frame.origin.y -= currentObjectBottomYposion - visiableHeight + 10
+                self.view.frame.origin.y -= currentObjectBottomYposion - visiableHeight + 15
                 
             }
             
         }
         
         
+    }
+    
+    //MARK: - UIImagePickerControllerDelegate
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any])
+    {
+        print("影像挑選：\(info)")
+        //取得選定的照片（包含相機與相簿）
+        let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        
+        newImage.contentMode = .scaleAspectFill
+        newImage.clipsToBounds = true
+        
+        newImage.layer.cornerRadius = newImage.layer.frame.size.width / 2
+        
+        //將照片顯示在大頭照位置
+        newImage.image = image
+        //退掉影像挑選控制器的畫面
+        picker.dismiss(animated: true, completion: nil)
     }
     
     //鍵盤彈出時 由通知中心呼叫的函式
@@ -113,6 +134,8 @@ class NewAddViewController: UIViewController,UINavigationControllerDelegate,UIIm
             sender.keyboardType = .phonePad
         case 3:
             sender.keyboardType = .namePhonePad
+        case 4:
+            sender.keyboardType = .namePhonePad
         default:
             sender.keyboardType = .default
         }
@@ -132,10 +155,73 @@ class NewAddViewController: UIViewController,UINavigationControllerDelegate,UIIm
         //選中相片後 放上ImageView
         self.show(imagepicker, sender: nil)
         
-        
     }
+
     @IBAction func addInDataBase(_ sender: UIButton)
     {
+        if newName.text! == "" || newAddress.text! == "" || newPhone.text! == "" || newListName.text! == ""
+        {
+            let alert = UIAlertController(title: "輸入錯誤", message: "資料不可為空白！", preferredStyle: .alert)
+            //在訊息視窗加上一個按鈕
+            alert.addAction(UIAlertAction(title: "確定", style: .destructive, handler: nil))
+            //顯示訊息視窗
+            self.present(alert, animated: true, completion: nil)
+            
+            
+            //直接離開函式
+            return
+        }
+        
+        //檢查有無照片
+        if newImage.image == nil
+        {
+            let alert = UIAlertController(title: "缺少大頭照", message: "尚未上傳照片！", preferredStyle: .alert)
+            //在訊息視窗加上一個按鈕
+            alert.addAction(UIAlertAction(title: "確定", style: .destructive, handler: nil))
+            //顯示訊息視窗
+            self.present(alert, animated: true, completion: nil)
+            
+            
+            //直接離開函式
+            return
+            
+        }
+            
+        
+        if db != nil
+        {
+            let sql = "insert into BabypapaList(name,listname,address,phone,picture) values('\(newName.text!)','\(newListName.text!)',\(newAddress.text!),\(newPhone.text!),'?')"
+            
+            print("更新指令\(sql)")
+            
+            //將SQL指令轉為Ｃ語言
+            let cSql = sql.cString(using: .utf8)
+            
+            //宣告儲存執行結果
+            var statament:OpaquePointer?
+            
+            sqlite3_prepare_v3(db, cSql, -1, 0, &statament, nil)
+            
+            //先準備圖檔資訊
+            //先準備圖檔資訊
+            let imageData = newImage.image!.jpegData(compressionQuality: 1.0)!
+            
+            
+            //綁定更新指令 所在的圖檔
+            sqlite3_bind_blob(statament, 1, (imageData as NSData).bytes, Int32(imageData.count), nil)
+            
+            if sqlite3_step(statament) == SQLITE_DONE
+            {
+                let alert = UIAlertController(title: "資料庫訊息", message: "資料新增成功", preferredStyle: .alert)
+                
+                
+                alert.addAction(UIAlertAction(title: "確定", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+            sqlite3_finalize(statament)
+            print("資料新增成功\(statament)")
+            
+        }
         
         
     }

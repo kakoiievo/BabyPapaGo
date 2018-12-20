@@ -58,6 +58,11 @@ UIPickerViewDelegate{
         let inputs:[String:String] = ["lat":latitude,"lon":longitude,"appid":APiKey]
         
         //getweatherData(url: weather, keys: inputs)
+        
+       
+        
+        
+        
     
     }
     
@@ -125,11 +130,25 @@ UIPickerViewDelegate{
         
         if cityText.text != ""
         {
-            
-            
             //let input1 = cityText.text!
             let key_s: [String:String] = ["q":cityText.text!,"appid":APiKey]
             getweatherData(url: weather, keys: key_s)
+            
+            if cityText.text == "Keelung"
+            {
+                cityLabel.text = "基隆"
+                
+                if cityText.text == "Taipei"
+                {
+                    cityLabel.text = "台北"
+                    
+                    if cityText.text == "Taoyuan"
+                    {
+                        cityLabel.text = "桃園"
+                    }
+                }
+                
+            }
             
         }else{
             

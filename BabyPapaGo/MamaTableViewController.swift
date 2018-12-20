@@ -6,12 +6,13 @@
 //  Copyright © 2018 Yung. All rights reserved.
 //
 
-//結構體就好比原地複製一份
-//class 等於指標過去 所以相對的 用class 會比較省記憶體空間
+
 
 
 import UIKit
 import SQLite3
+import CoreLocation
+import MapKit
 
 
 class MamaTableViewController: UITableViewController
@@ -31,6 +32,9 @@ class MamaTableViewController: UITableViewController
     //4 預設為非搜尋狀態
     var isSearch = false
     //------------------------------------------------------------
+    
+    var myUserDefaults :UserDefaults!
+    var myLocationManager :CLLocationManager!
     
     
     
@@ -135,9 +139,10 @@ class MamaTableViewController: UITableViewController
                 else
                 {
                     let aImage = UIImage(named: "test.jpeg")
-                    imageData = aImage?.jpegData(compressionQuality: 0.8)
+                    //imageData = aImage?.jpegData(compressionQuality: 0.8)
+                    dicRow["picture"] = aImage
                 }
-                dicRow["picture"] = imageData
+                
                 
                 
                 
@@ -217,6 +222,7 @@ class MamaTableViewController: UITableViewController
     
     
     
+    
 
     // MARK: - Table view data source
 
@@ -241,17 +247,89 @@ class MamaTableViewController: UITableViewController
         cell.listName?.text = arrTable[indexPath.row]["name"] as? String
         cell.listImage.image = arrTable[indexPath.row]["picture"] as? UIImage
         
-       
-
+        
+        /*
+        //經緯度轉換
+        let geoCoder = CLGeocoder()
+        var lat:Double = 0
+        var long:Double = 0
+        geoCoder.geocodeAddressString(cell.listAddRess.text!, completionHandler: {
+            (placemarks:[Any]!, error) -> Void in
+            if error != nil{
+                print(error as Any)
+                //return
+            }
+            if placemarks != nil && placemarks.count > 0{
+                let placemark = placemarks[0] as! CLPlacemark
+                //placemark.location.coordinate 取得經緯度的參數
+                lat = placemark.location!.coordinate.latitude
+                long = placemark.location!.coordinate.longitude
+                print("latitude: \(lat) \n")
+                print("longitude: \(long) ")
+                let latLabel: UILabel = cell.viewWithTag(4) as! UILabel
+                latLabel.text = String(lat)
+                let longLabel: UILabel = cell.viewWithTag(5) as! UILabel
+                longLabel.text = String(long)
+                let userLatitude = self.myUserDefaults.object(forKey: "userLatitude") as? Double
+                let userLongitude = self.myUserDefaults.object(forKey: "userLongitude") as? Double
+                print(userLatitude)
+                print(userLongitude)
+                
+                
+                //self.reverseGeocodeLocation(_latitude: userLatitude!, _longitude: userLongitude!)
+                let mmLabel: UILabel = cell.viewWithTag(6) as! UILabel
+                let km = (self.getDistance(lat1:userLatitude!,lng1:userLongitude!,lat2:lat,lng2:long))
+                let mm = km * 1000
+                if mm>=1000
+                {
+                    mmLabel.text = "\(String(format: "%.2f", km)) 公里"
+                }else{
+                    mmLabel.text = "\(String(mm)) 公尺"
+                }
+                
+                
+                //print(tmp)
+            }
+        })
+    */
+        
+        
 
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        
+
         
         currentRow = indexPath.row
+        
+        let geoCoder = CLGeocoder()
+        //由地理資訊編碼器將地址轉為經緯度
+        geoCoder.geocodeAddressString(arrTable[currentRow]["address"]! as! String) { (placemarks, error) in
+//            if error != nil
+//            {
+//                print("地址轉換經緯度失敗！")
+//                return
+//            }
+//            if placemarks == nil
+//            {
+//                print("查無地址對應的經緯度")
+//                return
+//            }
+            //取出地址對應的經緯度（只取陣列中的第一筆經緯度資訊）
+            let toPlaceMark = placemarks!.first
+            //將經緯度資訊轉為導航地圖目的地的大頭針
+            let toPin = MKPlacemark(placemark: toPlaceMark!)
+            //設定導航模式為開車模式（Apple地圖只有走路和開車兩種模式）
+            let naviOption = [MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving]
+            //產生導航地圖上導航終點的大頭針
+            let destMapItem = MKMapItem(placemark: toPin)
+            //從現在位置導航到目的地
+            destMapItem.openInMaps(launchOptions: naviOption)
+        }
+        
+        
+        
         
         
     }
@@ -260,6 +338,8 @@ class MamaTableViewController: UITableViewController
         
         let moreAction = UITableViewRowAction(style: .normal, title: "更多") { (rowAction, indexPath) in
             print("更多按鈕被按下")
+            
+            
         }
         
         let deleteAction = UITableViewRowAction(style: .destructive, title: "確定Byby") { (rowAction, IndexPath) in
@@ -321,6 +401,8 @@ class MamaTableViewController: UITableViewController
         // Return false if you do not want the item to be re-orderable.
         return true
     }
+    
+    
  
 
     /*
