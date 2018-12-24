@@ -98,7 +98,7 @@ class MamaTableViewController: UITableViewController
             //宣告 儲存查詢結果的變數
             var statement:OpaquePointer?
             
-            sqlite3_prepare_v2(db!, cSql, -1, &statement, nil)
+            sqlite3_prepare_v3(db, cSql, -1, 0, &statement, nil)
             
             while sqlite3_step(statement) == SQLITE_ROW
             {
@@ -112,8 +112,6 @@ class MamaTableViewController: UITableViewController
                 let babyName = String(cString: name!)
                 dicRow["name"] = babyName
                 
-               
-                
                 
                 let listname  = sqlite3_column_text(statement, 1)
                 
@@ -122,15 +120,15 @@ class MamaTableViewController: UITableViewController
                 dicRow["listname"] = babylistName
                 
         
-                //儲存數位檔案的(第3欄)
+                //儲存數位檔案的(第4欄)
                 var imageData:Data!
                 
                 //讀取檔案的位元資料(用於照片或是其他檔案)
-                if let totalBytes = sqlite3_column_blob(statement, 5)
+                if let totalBytes = sqlite3_column_blob(statement, 4)
                 {
                     
                     //讀取檔案長度
-                    let fileLength = sqlite3_column_bytes(statement, 5)
+                    let fileLength = sqlite3_column_bytes(statement, 4)
                     
                     //將檔案資訊還原成Data
                     imageData = Data(bytes: totalBytes, count: Int(fileLength))
@@ -139,10 +137,10 @@ class MamaTableViewController: UITableViewController
                 else
                 {
                     let aImage = UIImage(named: "test.jpeg")
-                    //imageData = aImage?.jpegData(compressionQuality: 0.8)
-                    dicRow["picture"] = aImage
+                    imageData = aImage?.jpegData(compressionQuality: 0.8)
+                    
                 }
-                
+                dicRow["picture"] = imageData
                 
                 
                 
@@ -159,7 +157,7 @@ class MamaTableViewController: UITableViewController
                 //將當筆字典存入到陣列。arrTable！！！
                 arrTable.append(dicRow)
             }
-           
+           print(arrTable)
             sqlite3_finalize(statement)
         }
         
@@ -245,55 +243,12 @@ class MamaTableViewController: UITableViewController
         cell.listAddRess.text = arrTable[indexPath.row]["address"] as? String
         cell.listPhone.text = arrTable[indexPath.row]["phone"]as? String
         cell.listName?.text = arrTable[indexPath.row]["name"] as? String
-        cell.listImage.image = arrTable[indexPath.row]["picture"] as? UIImage
+        //cell.listImage.image = UIImage(data: arrTable[indexPath.row]["picture"] as! Data)
+            
+
+        cell.listImage.image = UIImage(data: arrTable[indexPath.row]["picture"]! as! Data)
         
-        
-        /*
-        //經緯度轉換
-        let geoCoder = CLGeocoder()
-        var lat:Double = 0
-        var long:Double = 0
-        geoCoder.geocodeAddressString(cell.listAddRess.text!, completionHandler: {
-            (placemarks:[Any]!, error) -> Void in
-            if error != nil{
-                print(error as Any)
-                //return
-            }
-            if placemarks != nil && placemarks.count > 0{
-                let placemark = placemarks[0] as! CLPlacemark
-                //placemark.location.coordinate 取得經緯度的參數
-                lat = placemark.location!.coordinate.latitude
-                long = placemark.location!.coordinate.longitude
-                print("latitude: \(lat) \n")
-                print("longitude: \(long) ")
-                let latLabel: UILabel = cell.viewWithTag(4) as! UILabel
-                latLabel.text = String(lat)
-                let longLabel: UILabel = cell.viewWithTag(5) as! UILabel
-                longLabel.text = String(long)
-                let userLatitude = self.myUserDefaults.object(forKey: "userLatitude") as? Double
-                let userLongitude = self.myUserDefaults.object(forKey: "userLongitude") as? Double
-                print(userLatitude)
-                print(userLongitude)
-                
-                
-                //self.reverseGeocodeLocation(_latitude: userLatitude!, _longitude: userLongitude!)
-                let mmLabel: UILabel = cell.viewWithTag(6) as! UILabel
-                let km = (self.getDistance(lat1:userLatitude!,lng1:userLongitude!,lat2:lat,lng2:long))
-                let mm = km * 1000
-                if mm>=1000
-                {
-                    mmLabel.text = "\(String(format: "%.2f", km)) 公里"
-                }else{
-                    mmLabel.text = "\(String(mm)) 公尺"
-                }
-                
-                
-                //print(tmp)
-            }
-        })
-    */
-        
-        
+      
 
         return cell
     }
@@ -306,16 +261,7 @@ class MamaTableViewController: UITableViewController
         let geoCoder = CLGeocoder()
         //由地理資訊編碼器將地址轉為經緯度
         geoCoder.geocodeAddressString(arrTable[currentRow]["address"]! as! String) { (placemarks, error) in
-//            if error != nil
-//            {
-//                print("地址轉換經緯度失敗！")
-//                return
-//            }
-//            if placemarks == nil
-//            {
-//                print("查無地址對應的經緯度")
-//                return
-//            }
+
             //取出地址對應的經緯度（只取陣列中的第一筆經緯度資訊）
             let toPlaceMark = placemarks!.first
             //將經緯度資訊轉為導航地圖目的地的大頭針
@@ -346,13 +292,43 @@ class MamaTableViewController: UITableViewController
             
             print("刪除按鈕被按下去了 淦")
         
+            //self.arrTable.remove(at: indexPath.row)
+            
+            
+            //Step1.實際刪除資料庫當筆資料
+            //Step1_1.準備SQL指令
+            let sql = "delete from BabypapaList where name = '\(self.arrTable[indexPath.row]["name"]! as! String)'"
+            //將SQL指令轉成C語言字串
+            let cSql = sql.cString(using: .utf8)
+            //宣告儲存執行結果的指令
+            var statement:OpaquePointer?
+            /*
+             Step1_2.準備執行更新指令
+             （第三個參數若為正數，則限定SQL指定的長度。負數則不限定SQL指定的長度。
+             第四個參數為預備標誌-prepareFlag，準備給下一版本使用，目前沒有作用，其實預設為0。
+             最後一個參數為預留參數，目前沒有作用！）
+             */
+            sqlite3_prepare_v3(self.db, cSql, -1, 0, &statement, nil)
+            
+            //Step1_3.執行SQL指令
+            if sqlite3_step(statement) == SQLITE_DONE
+            {
+                //製作訊息視窗
+                let alert = UIAlertController(title: "資訊庫訊息", message: "資料庫資料已刪除！", preferredStyle: .alert)
+                //在訊息視窗加上一個按鈕
+                alert.addAction(UIAlertAction(title: "確定", style: .default, handler: nil))
+                //顯示訊息視窗
+                self.present(alert, animated: true, completion: nil)
+            }
+            //Step1_4.關閉SQL連線指令
+            sqlite3_finalize(statement)
+            
+            //Step2.刪除陣列當筆資料(離線資料集)
             self.arrTable.remove(at: indexPath.row)
-            
-            
+            //Step3.刪除表格上的儲存格
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
-        
-        return[moreAction,deleteAction]
+        return [moreAction,deleteAction]
         
         
     }

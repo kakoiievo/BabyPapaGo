@@ -204,14 +204,26 @@ class NewAddViewController: UIViewController,UINavigationControllerDelegate,UIIm
             
             //先準備圖檔資訊
             //先準備圖檔資訊
-            let imageData = newImage.image!.jpegData(compressionQuality: 1.0)!
+            let imageData = newImage.image!.jpegData(compressionQuality: 0.8)!
             
             
             //綁定更新指令 所在的圖檔
-            sqlite3_bind_blob(statament, 1, (imageData as NSData).bytes, Int32(imageData.count), nil)
+            sqlite3_bind_blob(statament, 4, (imageData as NSData).bytes, Int32(imageData.count), nil)
             
             if sqlite3_step(statament) == SQLITE_DONE
             {
+                //==================回寫上一頁的離線資料====================
+                //Step1.先準備要新增的一本字典
+                let newRow:[String:Any?] = ["name":newName.text!,"picture":imageData,"phone":newPhone.text!,"address":newAddress.text!,]
+//                //Step2.決定新字典回寫上一頁的離線資料的位置
+//                for (index,item) in NewMaTableViewController.arrTable.enumerated()
+//                {
+//                    //如果現在當筆離線資料的學號，已經比新增的學號資料還大，則將新資料安插在此
+//                    if txtNo.text! < (item["no"]! as! String)
+//                    {
+//                        myTableViewController.arrTable.insert(newRow, at: index)
+//                        break
+//                    }
                 let alert = UIAlertController(title: "資料庫訊息", message: "資料新增成功", preferredStyle: .alert)
                 
                 
@@ -219,7 +231,6 @@ class NewAddViewController: UIViewController,UINavigationControllerDelegate,UIIm
                 self.present(alert, animated: true, completion: nil)
             }
             sqlite3_finalize(statament)
-            print("資料新增成功\(statament)")
             
         }
         
