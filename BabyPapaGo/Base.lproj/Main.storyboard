@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AUl-Ir-Pvm">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,15 +14,15 @@
             <objects>
                 <tableViewController id="dmM-75-AIR" customClass="MamaTableViewController" customModule="BabyPapaGo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dsc-Cd-7h7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListTBCell" rowHeight="134" id="Awz-u3-omu" customClass="ListTBCell" customModule="BabyPapaGo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="134"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="134"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Awz-u3-omu" id="EDx-la-npg">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="133.66666666666666"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="133.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MGD-E0-cHd">
@@ -33,13 +33,13 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="電話:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nyg-tX-ohk">
-                                            <rect key="frame" x="128" y="54" width="231" height="22"/>
+                                            <rect key="frame" x="128" y="54" width="176" height="22"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="地址:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96K-uU-PeY">
-                                            <rect key="frame" x="128" y="84" width="231" height="26"/>
+                                            <rect key="frame" x="128" y="84" width="176" height="26"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -93,184 +93,80 @@
             <objects>
                 <viewController storyboardIdentifier="NewAddViewController" id="Ykb-XC-GE8" customClass="NewAddViewController" customModule="BabyPapaGo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vi5-Cq-fOc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bVv-DB-tIg">
-                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" red="0.0039106961860000001" green="0.0066988595120000003" blue="0.0078670418810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="新增景點" id="h8K-Zn-aMx"/>
-                                </items>
-                            </navigationBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eAb-lk-xzq" userLabel="TopView">
-                                <rect key="frame" x="0.0" y="88" width="375" height="232"/>
-                                <subviews>
-                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入名稱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kP6-Mr-abw">
-                                        <rect key="frame" x="25" y="188" width="323" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
-                                        <connections>
-                                            <action selector="didBegin:" destination="Ykb-XC-GE8" eventType="editingDidBegin" id="eht-r3-Swy"/>
-                                            <action selector="didEnd:" destination="Ykb-XC-GE8" eventType="editingDidEndOnExit" id="nav-cB-RQc"/>
-                                        </connections>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="景點名稱:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OfE-Dd-Jc0">
-                                        <rect key="frame" x="25" y="159" width="74" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bluesky.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="I8t-QU-vFm">
-                                        <rect key="frame" x="8" y="8" width="120" height="120"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="120" id="feg-Qx-aoy"/>
-                                            <constraint firstAttribute="width" constant="120" id="sYT-1r-BQD"/>
-                                        </constraints>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxj-JD-keX">
-                                        <rect key="frame" x="156" y="98" width="62" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="62" id="Cg6-dd-XVv"/>
-                                            <constraint firstAttribute="height" constant="30" id="RPh-R4-jiT"/>
-                                        </constraints>
-                                        <state key="normal" title="挑選照片"/>
-                                        <connections>
-                                            <action selector="getPhoto:" destination="Ykb-XC-GE8" eventType="touchUpInside" id="QTR-tq-XEh"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="0.67460402397260277" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="kP6-Mr-abw" secondAttribute="trailing" constant="27" id="0FZ-4V-d8T"/>
-                                    <constraint firstItem="kP6-Mr-abw" firstAttribute="leading" secondItem="eAb-lk-xzq" secondAttribute="leading" constant="25" id="3Ha-Ke-PyQ"/>
-                                    <constraint firstItem="OfE-Dd-Jc0" firstAttribute="leading" secondItem="eAb-lk-xzq" secondAttribute="leading" constant="25" id="7d0-9v-v9x"/>
-                                    <constraint firstItem="I8t-QU-vFm" firstAttribute="leading" secondItem="eAb-lk-xzq" secondAttribute="leading" constant="8" id="8vz-OH-yih"/>
-                                    <constraint firstItem="kP6-Mr-abw" firstAttribute="top" secondItem="OfE-Dd-Jc0" secondAttribute="bottom" constant="8" id="F7v-ON-EFC"/>
-                                    <constraint firstAttribute="width" constant="375" id="Htc-Bj-y7T"/>
-                                    <constraint firstAttribute="bottom" secondItem="kP6-Mr-abw" secondAttribute="bottom" constant="14" id="VfW-nL-vaV"/>
-                                    <constraint firstItem="sxj-JD-keX" firstAttribute="leading" secondItem="I8t-QU-vFm" secondAttribute="trailing" constant="28" id="b9r-oN-V6U"/>
-                                    <constraint firstItem="OfE-Dd-Jc0" firstAttribute="top" secondItem="I8t-QU-vFm" secondAttribute="bottom" constant="31" id="fgi-ma-QEa"/>
-                                    <constraint firstItem="sxj-JD-keX" firstAttribute="top" secondItem="eAb-lk-xzq" secondAttribute="top" constant="98" id="jtH-Ku-ANE"/>
-                                    <constraint firstAttribute="height" constant="232" id="mVs-y9-miK"/>
-                                    <constraint firstItem="kP6-Mr-abw" firstAttribute="leading" secondItem="eAb-lk-xzq" secondAttribute="leading" constant="25" id="ub0-jG-bp4"/>
-                                    <constraint firstItem="I8t-QU-vFm" firstAttribute="top" secondItem="eAb-lk-xzq" secondAttribute="top" constant="8" id="vFf-P2-Ubn"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tVr-qa-HHs" userLabel="midView">
-                                <rect key="frame" x="0.0" y="321" width="375" height="225"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地址:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBe-Ho-1bO">
-                                        <rect key="frame" x="26" y="92" width="40" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="djD-x4-ShO"/>
-                                            <constraint firstAttribute="width" constant="40" id="mim-Tg-8rX"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="說明:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5V9-X5-AH4">
-                                        <rect key="frame" x="26" y="158" width="40" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="I28-Cx-uaQ"/>
-                                            <constraint firstAttribute="height" constant="21" id="Icn-qM-5Xh"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入地址" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ilv-5W-Znt">
-                                        <rect key="frame" x="26" y="120" width="323" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
-                                        <connections>
-                                            <action selector="didBegin:" destination="Ykb-XC-GE8" eventType="editingDidBegin" id="bWS-qF-Ksa"/>
-                                            <action selector="didEnd:" destination="Ykb-XC-GE8" eventType="editingDidEndOnExit" id="0uS-Zi-Sob"/>
-                                        </connections>
-                                    </textField>
-                                    <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="輕鬆用短短幾個字寫下對於景點的評論吧～" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C4d-2f-lea">
-                                        <rect key="frame" x="26" y="187" width="323" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
-                                        <connections>
-                                            <action selector="didBegin:" destination="Ykb-XC-GE8" eventType="editingDidBegin" id="sP8-3W-vqf"/>
-                                            <action selector="didEnd:" destination="Ykb-XC-GE8" eventType="editingDidEndOnExit" id="7HT-mq-RNm"/>
-                                        </connections>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="電話:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwu-TS-yrm">
-                                        <rect key="frame" x="26" y="17" width="40" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="3a7-2y-E7z"/>
-                                            <constraint firstAttribute="height" constant="20" id="beD-FD-MrO"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入電話" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gIj-Ls-dX7">
-                                        <rect key="frame" x="26" y="45" width="323" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
-                                        <connections>
-                                            <action selector="didBegin:" destination="Ykb-XC-GE8" eventType="editingDidBegin" id="GZl-Ev-cwy"/>
-                                            <action selector="didEnd:" destination="Ykb-XC-GE8" eventType="editingDidEndOnExit" id="i91-rf-1X6"/>
-                                        </connections>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="0.60094713184931503" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="5V9-X5-AH4" firstAttribute="top" secondItem="ilv-5W-Znt" secondAttribute="bottom" constant="8" id="3lr-um-Pbo"/>
-                                    <constraint firstItem="ilv-5W-Znt" firstAttribute="top" secondItem="kBe-Ho-1bO" secondAttribute="bottom" constant="7" id="9cK-Ab-gD6"/>
-                                    <constraint firstAttribute="trailing" secondItem="ilv-5W-Znt" secondAttribute="trailing" constant="26" id="BPy-Na-Ni6"/>
-                                    <constraint firstItem="kBe-Ho-1bO" firstAttribute="leading" secondItem="tVr-qa-HHs" secondAttribute="leading" constant="26" id="HUQ-Da-yhf"/>
-                                    <constraint firstItem="C4d-2f-lea" firstAttribute="leading" secondItem="tVr-qa-HHs" secondAttribute="leading" constant="26" id="M7J-c7-8aL"/>
-                                    <constraint firstItem="kBe-Ho-1bO" firstAttribute="top" secondItem="gIj-Ls-dX7" secondAttribute="bottom" constant="17" id="QwV-be-yhl"/>
-                                    <constraint firstItem="hwu-TS-yrm" firstAttribute="leading" secondItem="tVr-qa-HHs" secondAttribute="leading" constant="26" id="VMj-EH-QoE"/>
-                                    <constraint firstItem="gIj-Ls-dX7" firstAttribute="top" secondItem="hwu-TS-yrm" secondAttribute="bottom" constant="8" id="Vd9-dU-Jwv"/>
-                                    <constraint firstItem="gIj-Ls-dX7" firstAttribute="leading" secondItem="tVr-qa-HHs" secondAttribute="leading" constant="26" id="afP-Ss-Scu"/>
-                                    <constraint firstItem="ilv-5W-Znt" firstAttribute="leading" secondItem="tVr-qa-HHs" secondAttribute="leading" constant="26" id="d5Y-4i-OPo"/>
-                                    <constraint firstItem="C4d-2f-lea" firstAttribute="top" secondItem="5V9-X5-AH4" secondAttribute="bottom" constant="8" id="e6i-Rm-Ax5"/>
-                                    <constraint firstItem="5V9-X5-AH4" firstAttribute="leading" secondItem="tVr-qa-HHs" secondAttribute="leading" constant="26" id="ek2-2c-xnH"/>
-                                    <constraint firstItem="hwu-TS-yrm" firstAttribute="top" secondItem="tVr-qa-HHs" secondAttribute="top" constant="17" id="kKm-Q2-KWl"/>
-                                    <constraint firstAttribute="height" constant="225" id="xDB-32-Kfb"/>
-                                    <constraint firstAttribute="width" constant="375" id="xbh-dt-GVi"/>
-                                    <constraint firstAttribute="trailing" secondItem="C4d-2f-lea" secondAttribute="trailing" constant="26" id="yZR-Jp-uam"/>
-                                    <constraint firstAttribute="trailing" secondItem="gIj-Ls-dX7" secondAttribute="trailing" constant="26" id="ynn-mc-WSi"/>
-                                </constraints>
-                            </view>
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入名稱" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="kP6-Mr-abw">
+                                <rect key="frame" x="13" y="249" width="292.5" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
+                                <connections>
+                                    <action selector="didBegin:" destination="Ykb-XC-GE8" eventType="editingDidBegin" id="eht-r3-Swy"/>
+                                    <action selector="didEnd:" destination="Ykb-XC-GE8" eventType="editingDidEndOnExit" id="nav-cB-RQc"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入電話" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="gIj-Ls-dX7">
+                                <rect key="frame" x="13" y="306" width="292.5" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                <connections>
+                                    <action selector="didBegin:" destination="Ykb-XC-GE8" eventType="editingDidBegin" id="GZl-Ev-cwy"/>
+                                    <action selector="didEnd:" destination="Ykb-XC-GE8" eventType="editingDidEndOnExit" id="i91-rf-1X6"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請輸入地址" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="ilv-5W-Znt">
+                                <rect key="frame" x="15" y="367" width="292.5" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
+                                <connections>
+                                    <action selector="didBegin:" destination="Ykb-XC-GE8" eventType="editingDidBegin" id="bWS-qF-Ksa"/>
+                                    <action selector="didEnd:" destination="Ykb-XC-GE8" eventType="editingDidEndOnExit" id="0uS-Zi-Sob"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="輕鬆用短短幾個字寫下對於景點的評論吧～" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="C4d-2f-lea">
+                                <rect key="frame" x="13" y="422" width="292.5" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
+                                <connections>
+                                    <action selector="didBegin:" destination="Ykb-XC-GE8" eventType="editingDidBegin" id="sP8-3W-vqf"/>
+                                    <action selector="didEnd:" destination="Ykb-XC-GE8" eventType="editingDidEndOnExit" id="7HT-mq-RNm"/>
+                                </connections>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cS7-UL-WUd">
-                                <rect key="frame" x="133" y="589" width="109" height="58"/>
+                                <rect key="frame" x="99" y="470" width="122" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="35"/>
                                 <size key="titleShadowOffset" width="6" height="0.0"/>
                                 <state key="normal" title="Add Go">
-                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.75956622430135512" green="0.32288987457861251" blue="0.91921168565750122" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="addInDataBase:" destination="Ykb-XC-GE8" eventType="touchUpInside" id="UNe-KK-Wdw"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bluesky.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="I8t-QU-vFm">
+                                <rect key="frame" x="16" y="103" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxj-JD-keX">
+                                <rect key="frame" x="143" y="193" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="挑選照片"/>
+                                <connections>
+                                    <action selector="getPhoto:" destination="Ykb-XC-GE8" eventType="touchUpInside" id="QTR-tq-XEh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="tVr-qa-HHs" firstAttribute="leading" secondItem="gUQ-2o-LRF" secondAttribute="leading" id="8nU-I0-Pfp"/>
-                            <constraint firstItem="eAb-lk-xzq" firstAttribute="top" secondItem="bVv-DB-tIg" secondAttribute="bottom" id="Feh-4O-Cyd"/>
-                            <constraint firstItem="bVv-DB-tIg" firstAttribute="top" secondItem="gUQ-2o-LRF" secondAttribute="top" id="HIN-Jl-zZn"/>
-                            <constraint firstItem="bVv-DB-tIg" firstAttribute="trailing" secondItem="gUQ-2o-LRF" secondAttribute="trailing" id="Pz1-hr-9eU"/>
-                            <constraint firstItem="bVv-DB-tIg" firstAttribute="leading" secondItem="gUQ-2o-LRF" secondAttribute="leading" id="QgS-4Z-g5P"/>
-                            <constraint firstItem="eAb-lk-xzq" firstAttribute="trailing" secondItem="gUQ-2o-LRF" secondAttribute="trailing" id="WMy-eb-p1W"/>
-                            <constraint firstItem="tVr-qa-HHs" firstAttribute="top" secondItem="eAb-lk-xzq" secondAttribute="bottom" constant="1" id="bdk-1F-YNx"/>
-                            <constraint firstItem="eAb-lk-xzq" firstAttribute="leading" secondItem="gUQ-2o-LRF" secondAttribute="leading" id="rDD-fo-NoH"/>
-                            <constraint firstItem="tVr-qa-HHs" firstAttribute="trailing" secondItem="gUQ-2o-LRF" secondAttribute="trailing" id="yE2-on-M9t"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gUQ-2o-LRF"/>
                     </view>
                     <connections>
@@ -283,27 +179,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yae-HK-0MD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3480.8000000000002" y="1180.0492610837439"/>
+            <point key="canvasLocation" x="3480" y="1179.9295774647887"/>
         </scene>
         <!--天氣-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BabyPapaGo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image=" Starrysky1.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="2AU-R2-pBK">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請點選城市名稱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kLk-nb-jqa">
-                                <rect key="frame" x="16" y="123" width="343" height="30"/>
+                                <rect key="frame" x="16" y="99" width="288" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1VS-Op-aSA">
-                                <rect key="frame" x="318" y="161" width="41" height="36"/>
+                                <rect key="frame" x="263" y="137" width="41" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="確認">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -312,22 +208,22 @@
                                     <action selector="addCityBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3RQ-PM-9AF"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bl9-jw-YgO">
-                                <rect key="frame" x="67" y="245" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="城市" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BbD-lc-Ggo">
-                                <rect key="frame" x="67" y="551" width="240" height="42"/>
+                                <rect key="frame" x="67" y="341" width="185" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="溫度" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYn-BD-c1a">
-                                <rect key="frame" x="16" y="173" width="71" height="42"/>
+                                <rect key="frame" x="16" y="149" width="71" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bl9-jw-YgO">
+                                <rect key="frame" x="40" y="205" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -385,7 +281,7 @@
                     <tabBarItem key="tabBarItem" title="景點" image="AppIcon32.png" id="OY9-27-t08"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="U78-ZO-bvZ">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

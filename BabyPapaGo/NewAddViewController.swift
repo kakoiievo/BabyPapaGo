@@ -33,7 +33,9 @@ class NewAddViewController: UIViewController,UINavigationControllerDelegate,UIIm
             db = delegate.db
             
         }
-    
+        
+        self.navigationItem.title = "新增景點"
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         
         
@@ -208,27 +210,26 @@ class NewAddViewController: UIViewController,UINavigationControllerDelegate,UIIm
             
             
             //綁定更新指令 所在的圖檔
-            sqlite3_bind_blob(statament, 4, (imageData as NSData).bytes, Int32(imageData.count), nil)
+            sqlite3_bind_blob(statament, 5, (imageData as NSData).bytes, Int32(imageData.count), nil)
             
             if sqlite3_step(statament) == SQLITE_DONE
             {
                 //==================回寫上一頁的離線資料====================
                 //Step1.先準備要新增的一本字典
                 let newRow:[String:Any?] = ["name":newName.text!,"picture":imageData,"phone":newPhone.text!,"address":newAddress.text!,]
-//                //Step2.決定新字典回寫上一頁的離線資料的位置
-//                for (index,item) in NewMaTableViewController.arrTable.enumerated()
-//                {
-//                    //如果現在當筆離線資料的學號，已經比新增的學號資料還大，則將新資料安插在此
-//                    if txtNo.text! < (item["no"]! as! String)
-//                    {
-//                        myTableViewController.arrTable.insert(newRow, at: index)
-//                        break
-//                    }
+                //Step2.決定新字典回寫上一頁的離線資料的位置
+                for (index,item) in NewMaTableViewController.arrTable.enumerated()
+                {
+                    //如果現在當筆離線資料的學號，已經比新增的學號資料還大，則將新資料安插在此
+                    if newName.text! < (item["name"]! as! String)
+                    {
+                        NewMaTableViewController.arrTable.insert(newRow, at: index)
+                        break
+                    }
                 let alert = UIAlertController(title: "資料庫訊息", message: "資料新增成功", preferredStyle: .alert)
                 
-                
-                alert.addAction(UIAlertAction(title: "確定", style: .default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+                    alert.addAction(UIAlertAction(title: "確定", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
             }
             sqlite3_finalize(statament)
             
@@ -237,4 +238,5 @@ class NewAddViewController: UIViewController,UINavigationControllerDelegate,UIIm
         
     }
     
+    }
 }
