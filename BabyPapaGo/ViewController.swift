@@ -43,9 +43,6 @@ UIPickerViewDelegate{
         super.viewDidLoad()
         //24.688176, 120.900805
         
-        
-        
-        
         cityPickView = UIPickerView()
         cityText.inputView = cityPickView
         
@@ -59,11 +56,6 @@ UIPickerViewDelegate{
         
         //getweatherData(url: weather, keys: inputs)
         
-       
-        
-        
-        
-    
     }
     
     

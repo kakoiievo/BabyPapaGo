@@ -205,12 +205,11 @@ class NewAddViewController: UIViewController,UINavigationControllerDelegate,UIIm
             sqlite3_prepare_v3(db, cSql, -1, 0, &statament, nil)
             
             //先準備圖檔資訊
-            //先準備圖檔資訊
             let imageData = newImage.image!.jpegData(compressionQuality: 0.8)!
             
             
             //綁定更新指令 所在的圖檔
-            sqlite3_bind_blob(statament, 5, (imageData as NSData).bytes, Int32(imageData.count), nil)
+            sqlite3_bind_blob(statament, 4, (imageData as NSData).bytes, Int32(imageData.count), nil)
             
             if sqlite3_step(statament) == SQLITE_DONE
             {

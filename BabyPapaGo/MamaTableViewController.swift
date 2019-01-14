@@ -243,9 +243,6 @@ class MamaTableViewController: UITableViewController
         cell.listAddRess.text = arrTable[indexPath.row]["address"] as? String
         cell.listPhone.text = arrTable[indexPath.row]["phone"]as? String
         cell.listName?.text = arrTable[indexPath.row]["name"] as? String
-        //cell.listImage.image = UIImage(data: arrTable[indexPath.row]["picture"] as! Data)
-            
-
         cell.listImage.image = UIImage(data: arrTable[indexPath.row]["picture"]! as! Data)
         
       
